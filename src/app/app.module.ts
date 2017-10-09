@@ -2,22 +2,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { UserReposComponent } from './users/user-repos/user-repos.component';
 import { UsersComponent } from './users/users.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
-import { UserRepoDetailComponent } from './users/user-repos/user-repo-detail/user-repo-detail.component';
+import { ReposComponent } from './repos/repos.component';
+import { RepoDetailComponent } from './repos/repo-detail/repo-detail.component';
 
 import { AppRoutingModule } from "./app-routing.module";
+
+// rxjs operator
+import 'rxjs/add/operator/catch';
+import "rxjs/add/operator/debounceTime";
+import "rxjs/add/operator/distinctUntilChanged";
+import 'rxjs/add/operator/map';
+import "rxjs/add/operator/switchMap";
+
+// rxjs extensions
+import "rxjs/add/Observable/of";
+import 'rxjs/add/Observable/throw';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserReposComponent,
+    ReposComponent,
     UsersComponent,
     NavComponent,
     HomeComponent,
-    UserRepoDetailComponent
+    RepoDetailComponent
   ],
   imports: [
     BrowserModule,

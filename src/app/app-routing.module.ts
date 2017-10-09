@@ -3,8 +3,8 @@ import { RouterModule } from "@angular/router";
 
 import { HomeComponent } from "./home/home.component";
 import { UsersComponent } from './users/users.component';
-import { UserReposComponent } from './users/user-repos/user-repos.component';
-import { UserRepoDetailComponent } from './users/user-repos/user-repo-detail/user-repo-detail.component';
+import { ReposComponent } from './repos/repos.component';
+import { RepoDetailComponent } from './repos/repo-detail/repo-detail.component';
 
 const ROUTES = RouterModule.forRoot([
     {
@@ -12,16 +12,16 @@ const ROUTES = RouterModule.forRoot([
       component: HomeComponent
     },
     {
-      path: 'users',
+      path: 'users/:username',
       component: UsersComponent
     },
     {
-      path: 'users/:id/repos',
-      component: UserReposComponent
+      path: 'repos/:username',
+      component: ReposComponent
     },
     {
-        path: 'repos/:repo',
-        component: UserRepoDetailComponent
+        path: 'repos/detail/:repo',
+        component: RepoDetailComponent
       },
     {
       path: '',
