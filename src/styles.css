@@ -11,3 +11,8 @@
 .float-right {
     float: right;
 }
+
+.star-label {
+    color: #fff;
+    font-size: .8em;
+}
