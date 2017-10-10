@@ -13,11 +13,10 @@ import { RepoDetailComponent } from './repos/repo-detail/repo-detail.component';
 import { AppRoutingModule } from "./app-routing.module";
 
 import { UsersService } from "./users/shared/users.service";
+import { ReposService } from "./repos/shared/repo.service";
 
 // rxjs operator
 import 'rxjs/add/operator/catch';
-import "rxjs/add/operator/debounceTime";
-import "rxjs/add/operator/distinctUntilChanged";
 import 'rxjs/add/operator/map';
 import "rxjs/add/operator/switchMap";
 
@@ -40,7 +39,10 @@ import 'rxjs/add/Observable/throw';
     FormsModule,
     HttpModule
   ],
-  providers: [UsersService],
+  providers: [
+    UsersService,
+    ReposService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

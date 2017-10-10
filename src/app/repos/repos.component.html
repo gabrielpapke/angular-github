@@ -20,31 +20,10 @@
       <span class="pull-right small"><a href="#" class="btn btn-info"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></a></span>
     </h2>
     <div class="list-group">
-      <a [routerLink]="['/repos/detail/', 'angular']" class="list-group-item clearfix">
-          Dapibus ac facilisis in
+      <a *ngFor="let repo of repos" [routerLink]="['/repos/detail/', repo.name ]" class="list-group-item clearfix">
+          {{repo.name}}
           <span class="pull-right">
-            <span class="badge"><small class="glyphicon glyphicon-star"></small> 10</span>
-            <span class="btn btn-xs btn-primary">ver detalhes</span>
-          </span>
-      </a>
-      <a [routerLink]="['/repos/detail/', 'angular']" class="list-group-item clearfix">
-          Dapibus ac facilisis in
-          <span class="pull-right">
-            <span class="badge"><small class="glyphicon glyphicon-star"></small> 10</span>
-            <span class="btn btn-xs btn-primary">ver detalhes</span>
-          </span>
-      </a>
-      <a [routerLink]="['/repos/detail/', 'angular']" class="list-group-item clearfix">
-          Dapibus ac facilisis in
-          <span class="pull-right">
-            <span class="badge"><small class="glyphicon glyphicon-star"></small> 10</span>
-            <span class="btn btn-xs btn-primary">ver detalhes</span>
-          </span>
-      </a>
-      <a [routerLink]="['/repos/detail/', 'angular']" class="list-group-item clearfix">
-          Dapibus ac facilisis in
-          <span class="pull-right">
-            <span class="badge"><small class="glyphicon glyphicon-star"></small> 10</span>
+            <span class="badge"><small class="glyphicon glyphicon-star"></small> {{repo.stargazers_count}}</span>
             <span class="btn btn-xs btn-primary">ver detalhes</span>
           </span>
       </a>

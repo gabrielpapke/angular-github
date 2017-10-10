@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 
 import { User } from "./users.model";
+import { Repo } from "../../repos/shared/repo.model";
 
 @Injectable()
 
@@ -17,6 +18,14 @@ export class UsersService {
         return this.http.get(url)
             .catch(this.handleErrors)
             .map((response: Response) => response.json() as User);
+    }
+
+    public getPopularRepos(username:string): Observable<Repo[]> {
+        let url = `${this.usersURL}/${username}/repos`;
+        
+        return this.http.get(url)
+            .catch(this.handleErrors)
+            .map((response: Response) => response.json() as Repo[]);
     }
     
 
