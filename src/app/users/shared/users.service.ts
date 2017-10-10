@@ -7,7 +7,7 @@ import { User } from "./users.model";
 @Injectable()
 
 export class UsersService {
-    public usersURL = 'https://api.github.com/users/';
+    public usersURL = 'https://api.github.com/users';
     public headers = new Headers({'Content-type': 'application/json'});
     public constructor(private http: Http) { }
 

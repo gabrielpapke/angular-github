@@ -1,21 +1,21 @@
 <div class="well well-lg">
   <div class="row">
     <div class="col-xs-12 col-sm-3">
-      <a href="#" class="thumbnail m-b-0">
-        <img src="https://avatars2.githubusercontent.com/u/5304816?v=4" alt="Gabriel Papke">
+      <a *ngIf="user.avatar_url"class="thumbnail m-b-0">
+        <img [src]="user.avatar_url" [alt]="user.name">
       </a>
     </div>
     <div class="col-xs-9">
-      <h3>Gabriel Papke</h3>
-      <h4><small>gabrielpapke@gmail.com</small></h4>
+      <h3>{{user.name}}</h3>
+      <h4 *ngIf="user.email"><small>{{user.email}}</small></h4>
       <button class="btn btn-default" type="button">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Seguindo <span class="badge">4</span>
+        Seguindo <span class="badge">{{user.following}}</span>
       </button>
       <button class="btn btn-default" type="button">
-        Seguidores <span class="badge">10</span>
+        Seguidores <span class="badge">{{user.followers}}</span>
       </button>
-      <p class="m-t-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vitae aliquid cupiditate dolorum sequi delectus iusto id recusandae.</p>
-      <p><a class="btn btn-primary btn-lg" [routerLink]="['/repos', 'gabrielpapke']" role="button">Ver repositórios</a></p>
+      <p class="m-t-10">{{user.bio}}</p>
+      <p><a class="btn btn-primary btn-lg" [routerLink]="['/repos', user.login]" role="button">Ver repositórios</a></p>
     </div> 
   </div>
 </div>

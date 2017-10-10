@@ -12,6 +12,8 @@ import { RepoDetailComponent } from './repos/repo-detail/repo-detail.component';
 
 import { AppRoutingModule } from "./app-routing.module";
 
+import { UsersService } from "./users/shared/users.service";
+
 // rxjs operator
 import 'rxjs/add/operator/catch';
 import "rxjs/add/operator/debounceTime";
@@ -38,7 +40,7 @@ import 'rxjs/add/Observable/throw';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,11 +22,16 @@ const ROUTES = RouterModule.forRoot([
     {
         path: 'repos/detail/:repo',
         component: RepoDetailComponent
-      },
+    },
     {
       path: '',
       redirectTo: '/home',
       pathMatch: 'full'
+    },
+    //otherwise
+    { 
+      path: '**',
+      redirectTo: '/home'
     }
   ])
 
